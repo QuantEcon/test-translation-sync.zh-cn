@@ -7,11 +7,19 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+heading-map:
+  Basic Concepts: 基本概念
+  Key Terms: 关键术语
+  Market Equilibrium: 数学示例
+  Mathematical Example: 代码示例
+  Code Example: MyST 指令
+  MyST Directives: 总结
+  Summary: 参考文献
 ---
 
 # 经济学导论
 
-这是一个用于测试翻译同步操作的讲座。
+这是一个用于测试翻译同步操作的讲座。测试 Bug #7 修复！
 
 ## 基本概念
 
