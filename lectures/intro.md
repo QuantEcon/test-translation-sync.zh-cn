@@ -7,6 +7,15 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+heading-map:
+  Basic Concepts: 基本概念
+  Key Terms: 关键术语
+  Market Equilibrium: 市场均衡
+  Mathematical Example: 数学示例
+  Code Example: 代码示例
+  MyST Directives: MyST 指令
+  Summary: 总结
+  References: 参考文献
 ---
 
 # 经济学导论
@@ -15,13 +24,17 @@ kernelspec:
 
 ## 基本概念
 
-经济学是研究社会如何配置稀缺资源的学科。
+经济学是研究社会如何配置稀缺资源以满足无限的欲望和需求的学科。
 
 ### 关键术语
 
 - **稀缺性**：有限的资源
 - **机会成本**：次优选择的价值
 - **供给与需求**：决定价格的市场力量
+
+## 市场均衡
+
+市场均衡发生在特定价格水平下供给等于需求时。
 
 ## 数学示例
 
