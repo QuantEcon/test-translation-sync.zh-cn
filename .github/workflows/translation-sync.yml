@@ -1,0 +1,25 @@
+name: Translation Sync
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  sync-translations:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Sync to Chinese
+        uses: quantecon/action-translation-sync@main
+        with:
+          target-repo: quantecon/test-translation-sync.zh-cn
+          target-language: zh-cn
+          github-token: \${{ secrets.QUANTECON_SERVICES_PAT }}
+          anthropic-api-key: \${{ secrets.ANTHROPIC_API_KEY }}
