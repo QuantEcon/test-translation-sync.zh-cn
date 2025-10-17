@@ -7,15 +7,29 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+heading-map:
+  Overview: 基本概念
+  Core Principles: 关键术语
+  Basic Concepts: 数学示例
+  Market Equilibrium: 代码示例
+  Mathematical Example: MyST 指令
+  Code Example: 总结
+  MyST Directives: 参考文献
 ---
 
 # 经济学导论
 
 这是一个用于测试翻译同步操作的讲座。
 
-## 基本概念
+## 概述
 
-经济学是研究社会如何配置稀缺资源的学科。
+经济分析帮助我们理解个人、企业和政府如何在稀缺性条件下做出决策。
+
+### 核心原则
+
+- **理性选择**：主体做出决策以最大化效用
+- **市场机制**：价格协调经济活动
+- **激励很重要**：人们以可预测的方式对激励做出反应
 
 ### 关键术语
 
