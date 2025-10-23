@@ -7,21 +7,25 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+heading-map:
+  Basic Concepts: 基本概念
+  Key Terms: 关键术语
+  Mathematical Framework: 数学示例
+  Python Implementation: 代码示例
+  Economic Applications: MyST 指令
+  MyST Directives: 总结
+  Empirical Evidence: 参考文献
+  Summary: 总结
+  References: 参考文献
 ---
 
 # 经济学导论
 
-这是一个用于测试翻译同步操作的讲座。
+这是一个简单的测试翻译同步操作的讲座,只有最小的改动。
 
 ## 基本概念
 
 经济学是研究社会如何配置稀缺资源的学科。
-
-### 关键术语
-
-- **稀缺性**：有限的资源
-- **机会成本**：次优选择的价值
-- **供给与需求**：决定价格的市场力量
 
 ## 数学示例
 
@@ -92,3 +96,20 @@ print(f"GDP: {gdp:.2f}")
 - Smith, Adam. "The Wealth of Nations" (1776)
 - Keynes, John Maynard. "The General Theory of Employment, Interest and Money" (1936)
 - Solow, Robert M. "A Contribution to the Theory of Economic Growth" (1956)
+
+## 总结
+
+本讲座涵盖了：
+1. 基本经济概念和术语
+2. 数学生产函数及其性质
+3. 经济分析的计算方法
+4. 劳动力和资本市场的实际应用
+5. 经验证据和数据来源
+
+## 参考文献
+
+- Smith, Adam. "The Wealth of Nations" (1776)
+- Keynes, John Maynard. "The General Theory of Employment, Interest and Money" (1936)
+- Solow, Robert M. "A Contribution to the Theory of Economic Growth" (1956)
+- Romer, David. "Advanced Macroeconomics" (4th ed., 2019)
+- Acemoglu, Daron and Robinson, James. "Why Nations Fail" (2012)
