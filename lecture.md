@@ -12,6 +12,7 @@ heading-map:
   Vector Spaces: 向量空间
   Vector Spaces::Basic Properties: 基本性质
   Vector Spaces::Basic Properties::Applications in Economics: 在经济学中的应用
+  Vector Spaces::Basic Properties::Closure Property: 封闭性质
   Matrix Operations: 矩阵运算
   Matrix Operations::Applications in Economics: 经济学应用
   Eigenvalues and Eigenvectors: 特征值与特征向量
@@ -67,6 +68,18 @@ plt.show()
 #### 在经济学中的应用
 
 向量空间性质在经济建模中是基础性的。封闭性质确保可行配置的组合仍然可行，而逆元的存在使我们能够建模债务和义务。
+
+#### 封闭性质
+
+封闭性质对于经济应用尤为重要。它确保组合可行消费束或生产计划会产生另一个可行结果。
+
+形式上，对于任意向量 $\mathbf{u}, \mathbf{v} \in V$ 和标量 $\alpha, \beta \in \mathbb{R}$：
+
+$$
+\alpha \mathbf{u} + \beta \mathbf{v} \in V
+$$
+
+该性质保证了点的凸组合保持在空间中，这对经济学中的优化问题至关重要。
 
 两个向量 $\mathbf{u}$ 和 $\mathbf{v}$ 的和按分量定义：
 
