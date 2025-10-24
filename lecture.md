@@ -8,6 +8,7 @@ kernelspec:
   language: python
   name: python3
 heading-map:
+  Linear Algebra Foundations: 线性代数基础
   Vector Spaces: 向量空间
   Basic Properties: 基本性质
   Matrix Operations: 矩阵运算
@@ -55,12 +56,14 @@ plt.show()
 
 ### 基本性质
 
-向量空间满足几个关键性质：
+向量空间满足定义其代数结构的几个基本公理：
 - 加法和标量乘法下的封闭性
 - 加法单位元（零向量）的存在
 - 加法逆元的存在
+- 加法的结合律和交换律
+- 连接加法和标量乘法的分配律
 
-这些性质确保向量空间在数学运算下表现可预测。
+这些公理确保向量空间在数学运算下表现可预测，使它们成为在优化问题中表示经济选择集和约束集的理想工具。
 
 #### 在经济学中的应用
 
