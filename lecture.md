@@ -26,7 +26,7 @@ heading-map:
 数学上，向量 $\mathbf{v} \in \mathbb{R}^n$ 可以表示为：
 
 $$
-\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix}
+\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} \in \mathbb{R}^n
 $$
 
 让我们用 Python 创建并可视化一些向量：
@@ -69,7 +69,7 @@ plt.show()
 两个向量 $\mathbf{u}$ 和 $\mathbf{v}$ 的和按分量定义：
 
 ```{math}
-\mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n \end{bmatrix}
+\mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n \end{bmatrix} \in \mathbb{R}^n
 ```
 
 ## 矩阵运算
@@ -84,7 +84,7 @@ a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
 \vdots & \vdots & \ddots & \vdots \\
 a_{m1} & a_{m2} & \cdots & a_{mn}
-\end{bmatrix}
+\end{bmatrix} \in \mathbb{R}^{m \times n}
 $$
 
 矩阵乘法允许我们组合线性变换。对于矩阵 $A$ 和 $B$，乘积 $AB$ 表示先应用变换 $B$，然后应用变换 $A$。
@@ -103,14 +103,14 @@ input_output = np.array([
 # 最终需求向量（十亿单位）
 final_demand = np.array([100, 150, 200])
 
-# 使用里昂惕夫逆矩阵计算总产出：x = (I - A)^{-1} * d
+# 使用列昂惕夫逆矩阵计算总产出：x = (I - A)^{-1} * d
 I = np.eye(3)
 leontief_inverse = np.linalg.inv(I - input_output)
 total_output = leontief_inverse @ final_demand
 
 print("投入产出矩阵：")
 print(input_output)
-print("\n里昂惕夫逆矩阵：")
+print("\n列昂惕夫逆矩阵：")
 print(np.round(leontief_inverse, 3))
 print("\n所需总产出（十亿）：")
 print(np.round(total_output, 2))
@@ -123,15 +123,15 @@ print(np.round(total_output, 2))
 - 马尔可夫链中的转移概率
 - 线性方程组中的系数矩阵
 
-里昂惕夫逆矩阵 $(I - A)^{-1}$ 特别重要，其中 $I$ 是单位矩阵，$A$ 是投入产出系数矩阵。
+列昂惕夫逆矩阵 $(I - A)^{-1}$ 特别重要，其中 $I$ 是单位矩阵，$A$ 是投入产出系数矩阵。
 
 ## 特征值与特征向量
 
-特征值和特征向量揭示了线性变换的重要性质。矩阵 $A$ 的特征向量 $v$ 满足：
+特征值和特征向量揭示了线性变换的重要性质。矩阵 $A$ 的特征向量 $\mathbf{v}$ 满足：
 
 ```{math}
 :label: eigenvalue-equation
-Av = \lambda v
+A\mathbf{v} = \lambda \mathbf{v}, \quad \mathbf{v} \neq \mathbf{0}
 ```
 
 其中 $\lambda$ 是特征值。这个基本方程贯穿整个经济学，从增长理论到稳定性分析。
@@ -139,7 +139,7 @@ Av = \lambda v
 对于 $n \times n$ 矩阵 $A$，特征多项式为：
 
 $$
-\det(A - \lambda I) = 0
+\det(A - \lambda I) = 0, \quad \lambda \in \mathbb{C}
 $$
 
 求解此方程得到特征值。让我们为转移矩阵计算特征值：
@@ -177,5 +177,5 @@ print(f"失业：{steady_state[1]:.2%}")
 幂迭代法可用于找到主特征值：
 
 $$
-\lambda_1 = \lim_{k \to \infty} \frac{\|A^k \mathbf{v}_0\|}{\|A^{k-1} \mathbf{v}_0\|}
+\lambda_1 = \lim_{k \to \infty} \frac{\|A^k \mathbf{v}_0\|}{\|A^{k-1} \mathbf{v}_0\|}, \quad \mathbf{v}_0 \neq \mathbf{0}
 $$
