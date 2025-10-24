@@ -11,9 +11,6 @@ heading-map:
   Linear Algebra Foundations: 线性代数基础
   Vector Spaces: 向量空间
   Vector Spaces::Basic Properties: 基本性质
-  Vector Spaces::Basic Properties::Applications in Economics: 在经济学中的应用
-  Matrix Operations: 矩阵运算
-  Matrix Operations::Applications in Economics: 经济学应用
   Eigenvalues and Eigenvectors: 特征值与特征向量
 ---
 
@@ -73,59 +70,6 @@ plt.show()
 ```{math}
 \mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n \end{bmatrix}
 ```
-
-## 矩阵运算
-
-矩阵是表示线性变换的数字矩形数组。它们是经济建模和数据分析的基本工具。
-
-一般的 $m \times n$ 矩阵具有以下形式：
-
-$$
-A = \begin{bmatrix}
-a_{11} & a_{12} & \cdots & a_{1n} \\
-a_{21} & a_{22} & \cdots & a_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
-a_{m1} & a_{m2} & \cdots & a_{mn}
-\end{bmatrix}
-$$
-
-矩阵乘法允许我们组合线性变换。对于矩阵 $A$ 和 $B$，乘积 $AB$ 表示先应用变换 $B$，然后应用变换 $A$。
-
-让我们用一个经济应用来演示矩阵运算：
-
-```{code-cell} python
-# 创建一个三部门经济的简单投入产出矩阵
-# 部门：农业、制造业、服务业
-input_output = np.array([
-    [0.2, 0.3, 0.1],  # 农业投入
-    [0.3, 0.2, 0.2],  # 制造业投入
-    [0.1, 0.2, 0.3]   # 服务业投入
-])
-
-# 最终需求向量（十亿单位）
-final_demand = np.array([100, 150, 200])
-
-# 使用里昂惕夫逆矩阵计算总产出：x = (I - A)^{-1} * d
-I = np.eye(3)
-leontief_inverse = np.linalg.inv(I - input_output)
-total_output = leontief_inverse @ final_demand
-
-print("投入产出矩阵：")
-print(input_output)
-print("\n里昂惕夫逆矩阵：")
-print(np.round(leontief_inverse, 3))
-print("\n所需总产出（十亿）：")
-print(np.round(total_output, 2))
-```
-
-### 经济学应用
-
-经济模型经常使用矩阵来表示：
-- 生产中的投入产出关系
-- 马尔可夫链中的转移概率
-- 线性方程组中的系数矩阵
-
-里昂惕夫逆矩阵 $(I - A)^{-1}$ 特别重要，其中 $I$ 是单位矩阵，$A$ 是投入产出系数矩阵。
 
 ## 特征值与特征向量
 
