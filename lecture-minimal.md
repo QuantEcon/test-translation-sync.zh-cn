@@ -10,6 +10,7 @@ kernelspec:
 heading-map:
   Introduction to Economics: 经济学导论
   Supply and Demand: 供给与需求
+  Supply and Demand::Market Equilibrium: 市场均衡
   Economic Models: 经济模型
 ---
 
@@ -21,7 +22,9 @@ heading-map:
 
 供给和需求是经济学中最基本的概念。供给曲线显示生产者愿意以不同价格出售多少商品，而需求曲线显示消费者愿意购买多少商品。
 
-当市场处于均衡状态时，供给量等于需求量。这个均衡价格平衡了买家和卖家的利益。
+### 市场均衡
+
+市场均衡发生在供给等于需求时。在这个关键点上，生产者想要出售的数量恰好与消费者想要购买的数量相匹配。这个均衡价格代表了一个稳定状态，其中市场力量处于平衡，价格没有内在的变化压力。
 
 ## 经济模型
 
