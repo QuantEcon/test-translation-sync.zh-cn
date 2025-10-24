@@ -8,11 +8,12 @@ kernelspec:
   language: python
   name: python3
 heading-map:
+  Principles of Economic Analysis: 经济分析原理
   Supply and Demand: 供给与需求
   Economic Models: 经济模型
 ---
 
-# 经济学导论
+# 经济分析原理
 
 本文档提供了经济学原理的基本介绍。我们将探讨构成经济分析基础的基本概念。
 
