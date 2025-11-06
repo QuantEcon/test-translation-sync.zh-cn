@@ -11,7 +11,6 @@ heading-map:
   Linear Algebra Foundations: 线性代数基础
   Vector Spaces: 向量空间
   Vector Spaces::Basic Properties: 基本性质
-  Vector Spaces::Basic Properties::Applications in Economics: 在经济学中的应用
   Matrix Operations: 矩阵运算
   Matrix Operations::Applications in Economics: 经济学应用
   Eigenvalues and Eigenvectors: 特征值与特征向量
@@ -63,10 +62,6 @@ plt.show()
 - 加法逆元的存在
 
 这些性质确保向量空间在数学运算下表现可预测。
-
-#### 在经济学中的应用
-
-向量空间性质在经济建模中是基础性的。封闭性质确保可行配置的组合仍然可行，而逆元的存在使我们能够建模债务和义务。
 
 两个向量 $\mathbf{u}$ 和 $\mathbf{v}$ 的和按分量定义：
 
