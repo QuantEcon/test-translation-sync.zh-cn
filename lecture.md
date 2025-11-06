@@ -8,176 +8,174 @@ kernelspec:
   language: python
   name: python3
 heading-map:
-  Linear Algebra Foundations: 线性代数基础
-  Vector Spaces: 向量空间
-  Vector Spaces::Basic Properties: 基本性质
-  Vector Spaces::Basic Properties::Applications in Economics: 在经济学中的应用
-  Matrix Operations: 矩阵运算
-  Matrix Operations::Applications in Economics: 经济学应用
-  Eigenvalues and Eigenvectors: 特征值与特征向量
+  Hierarchical Economic Systems: 层级经济系统
+  International Trade: 国际贸易
+  International Trade::Regional Trade Agreements: 区域贸易协定
+  International Trade::Regional Trade Agreements::Implementation Mechanisms: 实施机制
+  International Trade::Regional Trade Agreements::Implementation Mechanisms::Dispute Resolution Procedures: 争端解决程序
+  International Trade::Regional Trade Agreements::Implementation Mechanisms::Dispute Resolution Procedures::Arbitration Panels: 仲裁小组
+  International Trade::Regional Trade Agreements::Implementation Mechanisms::Dispute Resolution Procedures::Appeals Process: 上诉程序
+  International Trade::Regional Trade Agreements::Implementation Mechanisms::Enforcement Mechanisms: 执行机制
+  International Trade::Regional Trade Agreements::Harmonization Standards: 协调标准
+  International Trade::Regional Trade Agreements::Harmonization Standards::Product Safety Regulations: 产品安全法规
+  International Trade::Regional Trade Agreements::Harmonization Standards::Environmental Standards: 环境标准
+  International Trade::Bilateral Trade Relationships: 双边贸易关系
+  Monetary Policy Hierarchy: 货币政策层级
+  Monetary Policy Hierarchy::Policy Committee Structure: 政策委员会结构
+  Monetary Policy Hierarchy::Policy Committee Structure::Voting Procedures: 投票程序
+  Monetary Policy Hierarchy::Policy Committee Structure::Voting Procedures::Dissenting Opinions: 异议意见
+  Monetary Policy Hierarchy::Policy Committee Structure::Voting Procedures::Consensus Building: 共识建立
+  Monetary Policy Hierarchy::Policy Committee Structure::Information Flow: 信息流动
+  Monetary Policy Hierarchy::Implementation Channels: 实施渠道
+  Monetary Policy Hierarchy::Implementation Channels::Open Market Operations: 公开市场操作
+  Monetary Policy Hierarchy::Implementation Channels::Open Market Operations::Primary Dealers: 主要交易商
+  Monetary Policy Hierarchy::Implementation Channels::Open Market Operations::Primary Dealers::Auction Mechanisms: 拍卖机制
+  Monetary Policy Hierarchy::Implementation Channels::Open Market Operations::Primary Dealers::Settlement Procedures: 结算程序
+  Monetary Policy Hierarchy::Implementation Channels::Open Market Operations::Reserve Requirements: 准备金要求
+  Fiscal Policy Coordination: 财政政策协调
+  Fiscal Policy Coordination::National Budget Process: 国家预算过程
+  Fiscal Policy Coordination::National Budget Process::Revenue Collection: 税收征收
+  Fiscal Policy Coordination::National Budget Process::Revenue Collection::Income Tax Administration: 所得税管理
+  Fiscal Policy Coordination::National Budget Process::Revenue Collection::Income Tax Administration::Audit Selection Criteria: 审计选择标准
+  Fiscal Policy Coordination::National Budget Process::Revenue Collection::Income Tax Administration::Penalty Structures: 处罚结构
+  Fiscal Policy Coordination::National Budget Process::Revenue Collection::Corporate Tax Compliance: 企业税合规
+  Fiscal Policy Coordination::National Budget Process::Expenditure Allocation: 支出分配
+  Fiscal Policy Coordination::Intergovernmental Transfers: 政府间转移支付
+  Summary: 总结
 ---
 
-# 线性代数基础
+# 层级经济系统
 
-本讲座介绍了对定量经济学至关重要的线性代数基本概念。我们将探讨向量空间、矩阵及其在经济问题中的应用。
+本讲座探讨了经济系统中的层次结构,展示了深层的组织和分析框架。
 
-## 向量空间
+## 国际贸易
 
-向量空间是称为向量的对象的集合，这些对象可以相加并与标量相乘。理解向量空间对现代经济分析至关重要。
+国际贸易涉及多层次的决策制定,从个体企业到国家政府和国际组织。
 
-数学上，向量 $\mathbf{v} \in \mathbb{R}^n$ 可以表示为：
+### 区域贸易协定
 
-$$
-\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix}
-$$
+区域贸易协定如北美自由贸易协定和欧盟创建了复杂的多层次治理结构。
 
-让我们用 Python 创建并可视化一些向量：
+#### 实施机制
 
-```{code-cell} python
-import numpy as np
-import matplotlib.pyplot as plt
+每个贸易协定都需要特定的实施机制来确保合规并解决争端。
 
-# 创建两个向量
-v1 = np.array([2, 3])
-v2 = np.array([1, 4])
+##### 争端解决程序
 
-# 可视化向量
-fig, ax = plt.subplots(figsize=(8, 6))
-ax.quiver(0, 0, v1[0], v1[1], angles='xy', scale_units='xy', scale=1, color='blue', label='v1')
-ax.quiver(0, 0, v2[0], v2[1], angles='xy', scale_units='xy', scale=1, color='red', label='v2')
-ax.set_xlim(-1, 5)
-ax.set_ylim(-1, 5)
-ax.set_xlabel('x轴')
-ax.set_ylabel('y轴')
-ax.set_title('二维空间中的向量表示')
-ax.legend()
-ax.grid(True)
-plt.show()
-```
+正式程序用于解决成员国之间的贸易争端。
 
-### 基本性质
+###### 仲裁小组
 
-向量空间满足几个关键性质：
-- 加法和标量乘法下的封闭性
-- 加法单位元（零向量）的存在
-- 加法逆元的存在
+仲裁小组由贸易法专家组成,他们评估索赔并就贸易违规行为发布具有约束力的裁决。
 
-这些性质确保向量空间在数学运算下表现可预测。
+###### 上诉程序
 
-#### 在经济学中的应用
+上诉程序允许各方对初步裁决提出质疑,确保争端解决的公平性。
 
-向量空间性质在经济建模中是基础性的。封闭性质确保可行配置的组合仍然可行，而逆元的存在使我们能够建模债务和义务。
+##### 执行机制
 
-两个向量 $\mathbf{u}$ 和 $\mathbf{v}$ 的和按分量定义：
+执行机制包括贸易制裁和关税调整,以确保协定的合规性。
 
-```{math}
-\mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n \end{bmatrix}
-```
+#### 协调标准
 
-## 矩阵运算
+必须在各国之间协调标准,以促进无缝贸易。
 
-矩阵是表示线性变换的数字矩形数组。它们是经济建模和数据分析的基本工具。
+##### 产品安全法规
 
-一般的 $m \times n$ 矩阵具有以下形式：
+产品安全法规确保商品在所有成员国中满足最低质量和安全要求。
 
-$$
-A = \begin{bmatrix}
-a_{11} & a_{12} & \cdots & a_{1n} \\
-a_{21} & a_{22} & \cdots & a_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
-a_{m1} & a_{m2} & \cdots & a_{mn}
-\end{bmatrix}
-$$
+##### 环境标准
 
-矩阵乘法允许我们组合线性变换。对于矩阵 $A$ 和 $B$，乘积 $AB$ 表示先应用变换 $B$，然后应用变换 $A$。
+环境标准防止"逐底竞争",即国家降低环境保护以吸引企业。
 
-让我们用一个经济应用来演示矩阵运算：
+### 双边贸易关系
 
-```{code-cell} python
-# 创建一个三部门经济的简单投入产出矩阵
-# 部门：农业、制造业、服务业
-input_output = np.array([
-    [0.2, 0.3, 0.1],  # 农业投入
-    [0.3, 0.2, 0.2],  # 制造业投入
-    [0.1, 0.2, 0.3]   # 服务业投入
-])
+国家间的双边关系通常具有其独特的特征和协定。
 
-# 最终需求向量（十亿单位）
-final_demand = np.array([100, 150, 200])
+## 货币政策层级
 
-# 使用里昂惕夫逆矩阵计算总产出：x = (I - A)^{-1} * d
-I = np.eye(3)
-leontief_inverse = np.linalg.inv(I - input_output)
-total_output = leontief_inverse @ final_demand
+中央银行在决策和政策实施的层级框架内运作。
 
-print("投入产出矩阵：")
-print(input_output)
-print("\n里昂惕夫逆矩阵：")
-print(np.round(leontief_inverse, 3))
-print("\n所需总产出（十亿）：")
-print(np.round(total_output, 2))
-```
+### 政策委员会结构
 
-### 经济学应用
+政策委员会定期召开会议以设定利率和其他货币政策工具。
 
-经济模型经常使用矩阵来表示：
-- 生产中的投入产出关系
-- 马尔可夫链中的转移概率
-- 线性方程组中的系数矩阵
+#### 投票程序
 
-里昂惕夫逆矩阵 $(I - A)^{-1}$ 特别重要，其中 $I$ 是单位矩阵，$A$ 是投入产出系数矩阵。
+委员会成员对政策变化进行投票,在某些系统中具有不同的投票权重。
 
-## 特征值与特征向量
+##### 异议意见
 
-特征值和特征向量揭示了线性变换的重要性质。矩阵 $A$ 的特征向量 $v$ 满足：
+当成员不同意多数决定时,可以提出异议意见,为政策辩论提供有价值的见解。
 
-```{math}
-:label: eigenvalue-equation
-Av = \lambda v
-```
+##### 共识建立
 
-其中 $\lambda$ 是特征值。这个基本方程贯穿整个经济学，从增长理论到稳定性分析。
+共识建立过程有助于在正式投票前统一观点,减少市场的不确定性。
 
-对于 $n \times n$ 矩阵 $A$，特征多项式为：
+#### 信息流动
 
-$$
-\det(A - \lambda I) = 0
-$$
+信息从区域分支机构流向中央政策委员会,促进知情决策。
 
-求解此方程得到特征值。让我们为转移矩阵计算特征值：
+### 实施渠道
 
-```{code-cell} python
-# 为简单马尔可夫链创建转移矩阵
-# 状态：就业、失业
-transition_matrix = np.array([
-    [0.95, 0.05],  # 就业 -> (就业, 失业)
-    [0.20, 0.80]   # 失业 -> (就业, 失业)
-])
+一旦做出政策决定,实施通过多个渠道进行。
 
-# 计算特征值和特征向量
-eigenvalues, eigenvectors = np.linalg.eig(transition_matrix)
+#### 公开市场操作
 
-print("转移矩阵：")
-print(transition_matrix)
-print("\n特征值：")
-print(np.round(eigenvalues, 4))
-print("\n特征向量：")
-print(np.round(eigenvectors, 4))
+公开市场操作涉及买卖政府证券以影响货币供给。
 
-# 对应于特征值1的特征向量给出稳态分布
-steady_state_index = np.argmax(eigenvalues)
-steady_state = eigenvectors[:, steady_state_index]
-steady_state = steady_state / steady_state.sum()  # 归一化
+##### 主要交易商
 
-print("\n稳态分布：")
-print(f"就业：{steady_state[0]:.2%}")
-print(f"失业：{steady_state[1]:.2%}")
-```
+主要交易商充当中央银行与更广泛金融市场之间的中介。
 
-这些概念对于分析动态经济系统（如增长模型和稳定性分析）至关重要。
+###### 拍卖机制
 
-幂迭代法可用于找到主特征值：
+拍卖机制决定证券交易中的价格和数量。
 
-$$
-\lambda_1 = \lim_{k \to \infty} \frac{\|A^k \mathbf{v}_0\|}{\|A^{k-1} \mathbf{v}_0\|}
-$$
+###### 结算程序
+
+结算程序确保证券交易的及时和准确完成。
+
+##### 准备金要求
+
+准备金要求规定银行必须持有的最低准备金,影响其贷款能力。
+
+## 财政政策协调
+
+财政政策涉及多级政府之间的协调。
+
+### 国家预算过程
+
+国家预算过程涉及行政提案、立法批准和实施监督。
+
+#### 税收征收
+
+税收征收通过多个渠道和政府机构进行。
+
+##### 所得税管理
+
+所得税制度需要详细的记录保存和合规监控。
+
+###### 审计选择标准
+
+审计基于风险评估算法和随机抽样进行选择。
+
+###### 处罚结构
+
+处罚结构在阻止不合规行为的同时允许合理的错误和争议。
+
+##### 企业税合规
+
+企业税涉及跨国实体的复杂规则。
+
+#### 支出分配
+
+政府支出在各种计划和部门之间分配。
+
+### 政府间转移支付
+
+政府各级(联邦、州、地方)之间的转移支付确保公共服务获得充足资金。
+
+## 总结
+
+这个层级框架展示了经济系统如何在多个组织层面上运作,从全球机构到具体的实施程序。理解这些结构对于分析政策有效性和制度设计至关重要。
