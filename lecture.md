@@ -37,11 +37,11 @@ $$
 import numpy as np
 import matplotlib.pyplot as plt
 
-# 创建两个向量
+# 创建两个示例向量用于演示
 v1 = np.array([2, 3])
 v2 = np.array([1, 4])
 
-# 可视化向量
+# 创建向量可视化
 fig, ax = plt.subplots(figsize=(8, 6))
 ax.quiver(0, 0, v1[0], v1[1], angles='xy', scale_units='xy', scale=1, color='blue', label='v1')
 ax.quiver(0, 0, v2[0], v2[1], angles='xy', scale_units='xy', scale=1, color='red', label='v2')
@@ -49,7 +49,7 @@ ax.set_xlim(-1, 5)
 ax.set_ylim(-1, 5)
 ax.set_xlabel('x轴')
 ax.set_ylabel('y轴')
-ax.set_title('二维空间中的向量表示')
+ax.set_title('二维欧几里得空间中的向量可视化')
 ax.legend()
 ax.grid(True)
 plt.show()
@@ -105,14 +105,14 @@ input_output = np.array([
 # 最终需求向量（十亿单位）
 final_demand = np.array([100, 150, 200])
 
-# 使用里昂惕夫逆矩阵计算总产出：x = (I - A)^{-1} * d
+# 使用列昂惕夫逆矩阵计算总产出：x = (I - A)^{-1} * d
 I = np.eye(3)
 leontief_inverse = np.linalg.inv(I - input_output)
 total_output = leontief_inverse @ final_demand
 
 print("投入产出矩阵：")
 print(input_output)
-print("\n里昂惕夫逆矩阵：")
+print("\n列昂惕夫逆矩阵：")
 print(np.round(leontief_inverse, 3))
 print("\n所需总产出（十亿）：")
 print(np.round(total_output, 2))
@@ -125,7 +125,7 @@ print(np.round(total_output, 2))
 - 马尔可夫链中的转移概率
 - 线性方程组中的系数矩阵
 
-里昂惕夫逆矩阵 $(I - A)^{-1}$ 特别重要，其中 $I$ 是单位矩阵，$A$ 是投入产出系数矩阵。
+列昂惕夫逆矩阵 $(I - A)^{-1}$ 特别重要，其中 $I$ 是单位矩阵，$A$ 是投入产出系数矩阵。
 
 ## 特征值与特征向量
 
