@@ -33,6 +33,6 @@ jobs:
           mode: review
           source-repo: 'QuantEcon/test-translation-sync'
           docs-folder: '.'
-          claude-model: 'claude-opus-4-5-20251101'
+          claude-model: 'claude-sonnet-4-5-20250929'
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
