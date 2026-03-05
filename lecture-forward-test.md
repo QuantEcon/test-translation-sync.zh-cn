@@ -13,12 +13,13 @@ heading-map:
   The Model: 模型
   Steady State: 稳态
   Numerical Example: 数值示例
+  Comparative Statics: 比较静态分析
   Exercises: 练习
 ---
 
 # 索洛增长模型
 
-本讲座介绍索洛增长模型，这是宏观经济学中理解长期经济增长的基础模型之一。
+本讲座介绍[索洛增长模型](https://en.wikipedia.org/wiki/Solow%E2%80%93Swan_model)，这是宏观经济学中理解长期经济增长的基础模型之一。
 
 我们将探讨资本积累、劳动力增长和技术进步如何决定人均产出的稳态水平。
 
@@ -38,7 +39,7 @@ fontP.set_size(14)
 考虑一个具有生产函数的经济体
 
 $$
-Y_t = K_t^{\alpha} L_t^{1-\alpha}
+Y_t = A K_t^{\alpha} L_t^{1-\alpha}
 $$
 
 其中：
@@ -46,6 +47,7 @@ $$
 * $Y_t$ 是时间 $t$ 的总产出
 * $K_t$ 是资本存量
 * $L_t$ 是劳动力
+* $A$ 是技术参数
 * $\alpha \in (0,1)$ 是资本份额
 
 资本积累方程为
@@ -61,10 +63,12 @@ $$ (eq:capital-accum)
 定义 $k_t = K_t / L_t$ 为人均资本，我们可以证明稳态人均资本为
 
 $$
-k^* = \left(\frac{s}{\delta + n}\right)^{\frac{1}{1-\alpha}}
+k^* = \left(\frac{s A}{\delta + n}\right)^{\frac{1}{1-\alpha}}
 $$ (eq:steady-state)
 
 其中 $n$ 是人口增长率。
+
+使稳态消费最大化的[黄金法则](https://en.wikipedia.org/wiki/Golden_Rule_savings_rate)储蓄率为 $s^* = \alpha$。
 
 ## 数值示例
 
@@ -119,6 +123,26 @@ plt.tight_layout()
 plt.show()
 ```
 
+## 比较静态分析
+
+我们可以考察储蓄率变化对稳态的影响。
+
+```{code-cell} ipython3
+s_values = np.linspace(0.05, 0.50, 100)
+k_stars = (s_values * A / (δ + n)) ** (1 / (1 - α))
+y_stars = A * k_stars ** α
+c_stars = (1 - s_values) * y_stars
+
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.plot(s_values, c_stars, linewidth=2, label='消费 $c^*$')
+ax.axvline(α, color='r', linestyle='--', label=f'黄金法则 $s^* = \\alpha = {α}$')
+ax.set_xlabel('储蓄率 $s$', fontproperties=fontP)
+ax.set_ylabel('稳态人均消费', fontproperties=fontP)
+ax.set_title('资本积累黄金法则', fontproperties=fontP)
+ax.legend(prop=fontP)
+plt.show()
+```
+
 ## 练习
 
 ```{exercise}
@@ -131,6 +155,7 @@ plt.show()
 
 1. 计算每个经济体的稳态人均资本和产出。
 2. 哪个经济体有更高的稳态人均消费？
+3. 从 $k_0 = 1$ 出发，绘制两个经济体的转移动态。
 
 ```{exercise-end}
 ```
