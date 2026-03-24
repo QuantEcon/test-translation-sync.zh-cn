@@ -8,7 +8,7 @@ kernelspec:
   language: python
   name: python3
 heading-map:
-  Linear Algebra Foundations: 线性代数基础
+  '{index}`Linear Algebra` Foundations': '{index}`线性代数` 基础'
   Vector Spaces: 向量空间
   Vector Spaces::Basic Properties: 基本性质
   Vector Spaces::Basic Properties::Applications in Economics: 在经济学中的应用
@@ -17,7 +17,15 @@ heading-map:
   Eigenvalues and Eigenvectors: 特征值与特征向量
 ---
 
-# 线性代数基础
+(linear-algebra)=
+
+```{raw} jupyter
+<div id="qe-notebook-header" style="text-align:right;">
+        <a href="https://quantecon.org/lectures/">Lectures</a>
+</div>
+```
+
+# {index}`线性代数` 基础
 
 本讲座介绍了对定量经济学至关重要的线性代数基本概念。我们将探讨向量空间、矩阵及其在经济问题中的应用。
 
@@ -129,7 +137,7 @@ print(np.round(total_output, 2))
 
 ## 特征值与特征向量
 
-特征值和特征向量揭示了线性变换的重要性质。矩阵 $A$ 的特征向量 $v$ 满足：
+特征值和特征向量揭示了线性变换的重要结构性质，这对稳定性分析至关重要。矩阵 $A$ 的特征向量 $v$ 满足：
 
 ```{math}
 :label: eigenvalue-equation
