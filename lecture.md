@@ -9,12 +9,12 @@ kernelspec:
   name: python3
 heading-map:
   Linear Algebra Foundations: 线性代数基础
-  Vector Spaces: 向量空间
-  Vector Spaces::Basic Properties: 基本性质
-  Vector Spaces::Basic Properties::Applications in Economics: 在经济学中的应用
-  Matrix Operations: 矩阵运算
-  Matrix Operations::Applications in Economics: 经济学应用
-  Eigenvalues and Eigenvectors: 特征值与特征向量
+  Vector spaces: 向量空间
+  Vector spaces::Basic properties: 基本性质
+  Vector spaces::Basic properties::Applications in economics: 在经济学中的应用
+  Matrix operations: 矩阵运算
+  Matrix operations::Applications in economics: 经济学应用
+  Eigenvalues and eigenvectors: 特征值与特征向量
 ---
 
 # 线性代数基础
@@ -136,7 +136,7 @@ print(np.round(total_output, 2))
 Av = \lambda v
 ```
 
-其中 $\lambda$ 是特征值。这个基本方程贯穿整个经济学，从增长理论到稳定性分析。
+其中 $\lambda$ 是特征值。这个基本方程贯穿整个经济学，从增长理论到动态系统的稳定性分析。
 
 对于 $n \times n$ 矩阵 $A$，特征多项式为：
 
