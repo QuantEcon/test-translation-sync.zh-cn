@@ -7,10 +7,11 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
-heading-map:
-  Introduction to Economics: 经济学导论
-  Supply and Demand: 供给与需求
-  Economic Models: 经济模型
+translation:
+  title: 经济学导论
+  headings:
+    Supply and Demand: 供给与需求
+    Economic Models: 经济模型
 ---
 
 # 经济学导论
@@ -19,9 +20,9 @@ heading-map:
 
 ## 供给与需求
 
-供给和需求是经济学中最基本的概念。供给曲线显示生产者愿意以不同价格出售多少商品，而需求曲线显示消费者愿意购买多少商品。
+供给和需求是经济学的核心概念，构成了市场分析的基础。供给曲线展示了生产者在不同价格点上的行为，显示他们愿意出售多少商品。相反，需求曲线代表了消费者的行为和购买决策。
 
-当市场处于均衡状态时，供给量等于需求量。这个均衡价格平衡了买家和卖家的利益。
+市场均衡出现在供给曲线和需求曲线的交点处。在这一点上，供给量等于需求量，市场得以有效出清。这个均衡价格代表了市场的自然平衡。
 
 ## 经济模型
 
