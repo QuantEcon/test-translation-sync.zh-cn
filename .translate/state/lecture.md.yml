@@ -1,2 +1,6 @@
-source_commit: 5400db184619af8a1351db23eb658403b0721088
-translated_at: 2026-07-21T00:00:00Z
+source-sha: a0e9ea7e86ee5a99ef0209b59af744eca2bd8bdf
+synced-at: "2026-07-21"
+model: claude-sonnet-5
+mode: UPDATE
+section-count: 8
+tool-version: 0.18.1
