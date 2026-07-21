@@ -46,8 +46,17 @@ jobs:
 
     steps:
       - name: Rebase open translation PRs
-        uses: QuantEcon/action-translation@v0
+        # TEMPORARY: pinned to the head of action-translation PR #124 to validate the
+        # rebase-stale-siblings feature pre-release (harness-first policy). The @v0 tag
+        # is v0.18.1, which does not carry #124 — this is the documented way to test
+        # unreleased code through the workflow layer. Restore @v0 after validation.
+        uses: QuantEcon/action-translation@341fa9f03b34ce91f006b99b685dd4e5a4d2e082
         with:
           mode: rebase
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # PAT rather than GITHUB_TOKEN: commits pushed with GITHUB_TOKEN do not
+          # trigger workflows, so refreshed branches would get no CI runs — the exact
+          # no-op this run exists to disprove. See action-translation#125.
+          github-token: ${{ secrets.QUANTECON_SERVICES_PAT }}
+          # On for this validation: refresh non-overlapping siblings.
+          rebase-stale-siblings: 'true'
