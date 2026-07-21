@@ -1,38 +1,62 @@
+# Review Translations — Quality check on translation PRs
+# When a PR is opened/updated that carries the 'action-translation' label,
+# this workflow runs a quality review and posts a comment.
+#
+# Mirrors the upstream template in action-translation
+# docs/user/tutorials/connect-existing.md — keep it in step with that.
+#
+# HARNESS NOTE: this deliberately mirrors production verbatim, including the
+# published-tag pin, rather than checking out the action and building it with
+# `uses: ./action`. The harness is meant to catch config regressions as well as
+# code regressions, and the local-build form never exercises whether `@v0`
+# resolves to the intended release — which is the change the estate most often
+# makes. The previous version of this file also checked out the action with no
+# `ref:` at all, so it silently tested whatever last landed on `main`.
+# See QuantEcon/action-translation#109.
+#
+# To validate UNRELEASED code, drive the CLI locally against this repo with a
+# built bundle (as the v0.18.0 smoke test did) — `uses:` cannot take an
+# expression, so a workflow cannot switch action versions dynamically.
 name: Review Translations
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize, labeled, reopened]
 
 jobs:
   review:
-    # Only review PRs created by the sync action
-    if: contains(github.event.pull_request.labels.*.name, 'action-translation')
+    # Ignore `labeled` events for every other label: a sync adds its labels in a single
+    # addLabels call, but GitHub emits one `labeled` event per label, and each would
+    # otherwise start a full (billed) review of the same diff.
+    if: >
+      contains(github.event.pull_request.labels.*.name, 'action-translation') &&
+      (github.event.action != 'labeled' || github.event.label.name == 'action-translation')
     runs-on: ubuntu-latest
-    
+
+    # v0.17.0's review dedupe deletes superseded comments, which needs pull-requests: write.
+    permissions:
+      contents: read
+      pull-requests: write
+
+    # One review per PR — supersede an in-flight review instead of running both.
+    # Job-level (not workflow-level) on purpose: the group is entered only after the `if`
+    # above has passed, so a `labeled` event for 'automated' skips out without cancelling
+    # the real review. At workflow level it would cancel first and skip second, leaving none.
+    concurrency:
+      group: review-translations-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
+
     steps:
-      - name: Checkout action
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
-          repository: QuantEcon/action-translation
-          path: action
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      
-      - name: Install dependencies
-        run: |
-          cd action
-          npm ci
-      
-      - name: Review translation
-        uses: ./action
+          fetch-depth: 2
+
+      - uses: QuantEcon/action-translation@v0
         with:
           mode: review
-          source-repo: 'QuantEcon/test-translation-sync'
+          source-repo: QuantEcon/test-translation-sync
+          source-language: en
+          target-language: zh-cn
           docs-folder: '.'
-          claude-model: 'claude-sonnet-4-5-20250929'
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
