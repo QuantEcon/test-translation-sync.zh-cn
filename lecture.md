@@ -181,3 +181,5 @@ print(f"失业：{steady_state[1]:.2%}")
 $$
 \lambda_1 = \lim_{k \to \infty} \frac{\|A^k \mathbf{v}_0\|}{\|A^{k-1} \mathbf{v}_0\|}
 $$
+
+<!-- harness: #115 rebase test, lecture -->
