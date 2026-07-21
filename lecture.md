@@ -7,14 +7,15 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
-heading-map:
-  Linear Algebra Foundations: 线性代数基础
-  Vector Spaces: 向量空间
-  Vector Spaces::Basic Properties: 基本性质
-  Vector Spaces::Basic Properties::Applications in Economics: 在经济学中的应用
-  Matrix Operations: 矩阵运算
-  Matrix Operations::Applications in Economics: 经济学应用
-  Eigenvalues and Eigenvectors: 特征值与特征向量
+translation:
+  title: 线性代数基础
+  headings:
+    Vector Spaces: 向量空间
+    Vector Spaces::Basic Properties: 基本性质
+    Vector Spaces::Basic Properties::Applications in Economics: 在经济学中的应用
+    Matrix Operations: 矩阵运算
+    Matrix Operations::Applications in Economics: 经济学应用
+    Eigenvalues and Eigenvectors: 特征值与特征向量
 ---
 
 # 线性代数基础
@@ -37,11 +38,11 @@ $$
 import numpy as np
 import matplotlib.pyplot as plt
 
-# 创建两个向量
+# 创建两个示例向量用于演示
 v1 = np.array([2, 3])
 v2 = np.array([1, 4])
 
-# 可视化向量
+# 创建向量可视化
 fig, ax = plt.subplots(figsize=(8, 6))
 ax.quiver(0, 0, v1[0], v1[1], angles='xy', scale_units='xy', scale=1, color='blue', label='v1')
 ax.quiver(0, 0, v2[0], v2[1], angles='xy', scale_units='xy', scale=1, color='red', label='v2')
@@ -49,7 +50,7 @@ ax.set_xlim(-1, 5)
 ax.set_ylim(-1, 5)
 ax.set_xlabel('x轴')
 ax.set_ylabel('y轴')
-ax.set_title('二维空间中的向量表示')
+ax.set_title('二维欧几里得空间中的向量可视化')
 ax.legend()
 ax.grid(True)
 plt.show()
