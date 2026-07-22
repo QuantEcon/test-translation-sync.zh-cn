@@ -51,7 +51,7 @@ jobs:
         with:
           fetch-depth: 2
 
-      - uses: QuantEcon/action-translation@feat/verdict-v2
+      - uses: QuantEcon/action-translation@v0
         with:
           mode: review
           source-repo: QuantEcon/test-translation-sync
@@ -60,4 +60,3 @@ jobs:
           docs-folder: '.'
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          auto-merge-mode: shadow
