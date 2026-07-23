@@ -17,7 +17,7 @@
 # To validate UNRELEASED code, drive the CLI locally against this repo with a
 # built bundle (as the v0.18.0 smoke test did) — `uses:` cannot take an
 # expression, so a workflow cannot switch action versions dynamically.
-name: Review Translations  # harness-reset preservation probe
+name: Review Translations
 
 on:
   pull_request:
