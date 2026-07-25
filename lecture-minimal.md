@@ -8,24 +8,74 @@ kernelspec:
   language: python
   name: python3
 translation:
-  title: 经济学导论
+  title: 经济理论框架
   headings:
-    Supply and Demand: 供给与需求
-    Economic Models: 经济模型
+    Microeconomics: 微观经济学
+    Macroeconomics: 宏观经济学
+    International Economics: International Economics
+    International Economics::Trade Theory: Trade Theory
+    International Economics::Exchange Rates: Exchange Rates
+    International Economics::International Finance: International Finance
+    Econometrics: 计量经济学
+    Econometrics::Time Series Analysis: 时间序列分析
+    Econometrics::Cross-Sectional Methods: 截面方法
+    Econometrics::Panel Data Techniques: 面板数据技术
+    Development Economics: 发展经济学
+    Behavioral Economics: 行为经济学
+    Behavioral Economics::Cognitive Biases: 认知偏差
+    Behavioral Economics::Prospect Theory: 前景理论
+    Behavioral Economics::Applications: 应用
+    Conclusion: 结论
 ---
 
-# 经济学导论
+# 经济理论框架
 
-本文档提供了经济学原理的基本介绍。我们将探讨构成经济分析基础的基本概念。
+本文档概述了经济分析的框架，其中一些章节仅作为未来内容的占位符。
 
-## 供给与需求
+## 微观经济学
 
-供给和需求是经济学中最基本的概念。供给曲线显示生产者愿意以不同价格出售多少商品，而需求曲线显示消费者愿意购买多少商品。
+微观经济学研究个人决策以及企业与家庭层面的市场互动。
 
-当市场处于均衡状态时，供给量等于需求量。这个均衡价格平衡了买家和卖家的利益。
+## 宏观经济学
 
-## 经济模型
+## International Economics
 
-经济模型是经济过程的简化表示。它们通过关注最重要的关系来帮助经济学家理解复杂系统。
+国际经济学研究跨境贸易、金融与政策协调。
 
-模型做出假设以简化现实。虽然没有模型是完美的，但好的模型可以提供关于经济如何运作的宝贵见解。
+### Trade Theory
+
+### Exchange Rates
+
+汇率动态影响国际竞争力与资本流动。
+
+### International Finance
+
+## 计量经济学
+
+用于估计经济关系和检验假设的统计方法。
+
+### 时间序列分析
+
+### 截面方法
+
+截面分析考察某一时间点上多个个体的数据。
+
+### 面板数据技术
+
+## 发展经济学
+
+## 行为经济学
+
+行为经济学将心理学的见解融入经济模型，用以解释与理性选择理论的偏差。
+
+### 认知偏差
+
+### 前景理论
+
+前景理论描述了人们在风险下如何做决策，展示了对收益和损失的非对称反应。
+
+### 应用
+
+## 结论
+
+该框架为组织经济研究和教学提供了一个结构。空白部分表明了未来扩展的领域。
