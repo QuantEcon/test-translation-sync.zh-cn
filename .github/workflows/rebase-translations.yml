@@ -9,11 +9,7 @@
 # This eliminates merge conflicts caused by multiple upstream PRs
 # modifying the same files. See: https://github.com/QuantEcon/action-translation/issues/63
 #
-# HARNESS NOTE: this mirrors the production template verbatim, including the
-# published-tag pin. That is the point — the harness exists to catch config
-# regressions, not only code regressions, and a `uses: ./action` local build
-# would never exercise whether `@v0` resolves to the intended release.
-# See QuantEcon/action-translation#109.
+# Place this file at: .github/workflows/rebase-translations.yml
 
 name: Rebase Translation PRs
 
@@ -51,15 +47,20 @@ jobs:
 
     steps:
       - name: Rebase open translation PRs
-        uses: QuantEcon/action-translation@v0
+        uses: QuantEcon/action-translation@main
         with:
           mode: rebase
+          docs-folder: '.'
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
-          # PAT rather than the default GITHUB_TOKEN, deliberately: commits pushed with
-          # GITHUB_TOKEN trigger no workflows, so rebased branches end up with run-less
-          # heads (validated both ways on this repo, 2026-07-21 — zero runs under
-          # GITHUB_TOKEN, review triggered under the PAT). See action-translation#125.
+          # Commits pushed with the default GITHUB_TOKEN do not trigger workflows
+          # (GitHub's recursion guard), so rebased/refreshed branches will get their
+          # new commit but NO CI runs on it. If checks must re-run — and with
+          # required checks a run-less head blocks merging — pass a PAT or App
+          # token here instead, as the sync workflows do.
           github-token: ${{ secrets.QUANTECON_SERVICES_PAT }}
-          # Enable during a drift-recovery wave to refresh non-overlapping siblings
-          # (validated here against action-translation#124). Off in steady state.
+          # Uncomment during a drift-recovery wave. `forward` opens one PR per lecture,
+          # so siblings never share a file and none of them are conflict-rebased — but
+          # every merge still leaves their checks stale. This refreshes them against the
+          # new base without re-translating. Off by default: mid-wave it touches every
+          # other open PR on every merge. See action-translation#123.
           # rebase-stale-siblings: 'true'
