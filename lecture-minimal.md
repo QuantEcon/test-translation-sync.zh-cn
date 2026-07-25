@@ -3,14 +3,17 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.16.1
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
-heading-map:
-  Introduction to Economics: 经济学导论
-  Supply and Demand: 供给与需求
-  Economic Models: 经济模型
+translation:
+  title: 经济学导论
+  headings:
+    Supply and Demand: 供给与需求
+    Economic Models: 经济模型
 ---
 
 # 经济学导论
