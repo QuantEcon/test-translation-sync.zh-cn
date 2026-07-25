@@ -7,15 +7,16 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
-heading-map:
-  Introduction to Economics: 经济学导论
-  Supply and Demand: 供给与需求
-  Economic Models: 经济模型
+translation:
+  title: 经济学导论
+  headings:
+    Supply and Demand: 供给与需求
+    Economic Models: 经济模型
 ---
 
 # 经济学导论
 
-本文档提供了经济学原理的基本介绍。我们将探讨构成经济分析基础的基本概念。
+本文档提供了经济学原理的全面介绍，内容和示例均已更新。我们将探讨构成现代经济分析基础的基本概念。
 
 ## 供给与需求
 
