@@ -11,14 +11,6 @@
 # new target repos from it (substituting source-repo, source-language and
 # docs-folder), and the docs quote the same shape. A drift test
 # (src/cli/__tests__/workflow-templates.test.ts) keeps every copy aligned.
-#
-# HARNESS DIVERGENCE (2026-08-04, Stage 4 of project-translation#15):
-# `auto-merge-mode: 'shadow'` is set here to validate the shadow gate on the
-# harness before any production edition adopts it. Shadow records the
-# would-auto-merge decision (verdict block, workflow notice, output) without
-# acting on it. NOTE: the E2E script re-renders this file from examples/ on
-# every run, which strips this input — re-apply after any script run while
-# the Stage 4 validation window is open.
 
 name: Review Translations
 
@@ -52,12 +44,11 @@ jobs:
         with:
           fetch-depth: 2
 
-      - uses: QuantEcon/action-translation@v0.25.0
+      - uses: QuantEcon/action-translation@v0
         with:
           mode: review
           source-repo: 'QuantEcon/test-translation-sync'
           source-language: 'en'
           docs-folder: '.'
-          auto-merge-mode: 'shadow'
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
