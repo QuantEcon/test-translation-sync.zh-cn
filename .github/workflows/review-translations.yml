@@ -44,7 +44,7 @@ jobs:
         with:
           fetch-depth: 2
 
-      - uses: QuantEcon/action-translation@main
+      - uses: QuantEcon/action-translation@v0
         with:
           mode: review
           source-repo: 'QuantEcon/test-translation-sync'
