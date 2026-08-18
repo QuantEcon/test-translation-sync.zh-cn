@@ -1,0 +1,6 @@
+source-language: en
+target-language: zh-cn
+docs-folder: .
+editors:
+  primary: mmcky
+  secondary: []
