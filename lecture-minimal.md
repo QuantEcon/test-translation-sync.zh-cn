@@ -24,6 +24,8 @@ translation:
 
 当市场处于均衡状态时，供给量等于需求量。这个均衡价格平衡了买家和卖家的利益。
 
+A price set above the equilibrium level leaves some sellers unable to find buyers, and the resulting surplus pushes the price back down. Does the adjustment happen quickly? That depends on how responsive quantities are to price, which is why the slope of each curve matters as much as its position.
+
 ## 经济模型
 
 经济模型是经济过程的简化表示。它们通过关注最重要的关系来帮助经济学家理解复杂系统。
