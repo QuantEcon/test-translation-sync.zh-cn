@@ -92,32 +92,15 @@ $$
 
 矩阵乘法允许我们组合线性变换。对于矩阵 $A$ 和 $B$，乘积 $AB$ 表示先应用变换 $B$，然后应用变换 $A$。
 
+复合的顺序很重要，因为矩阵乘法不满足交换律：一般而言 $AB \neq BA$。这并非细枝末节。当两项政策被表示为矩阵时，它们是否可交换决定了以相反顺序实施这两项政策是否会得到相同的经济结果。
+
 让我们用一个经济应用来演示矩阵运算：
 
 ```{code-cell} python
-# 创建一个三部门经济的简单投入产出矩阵
-# 部门：农业、制造业、服务业
-input_output = np.array([
-    [0.2, 0.3, 0.1],  # 农业投入
-    [0.3, 0.2, 0.2],  # 制造业投入
-    [0.1, 0.2, 0.3]   # 服务业投入
-])
-
-# 最终需求向量（十亿单位）
-final_demand = np.array([100, 150, 200])
-
-# 使用列昂惕夫逆矩阵计算总产出：x = (I - A)^{-1} * d
-I = np.eye(3)
-leontief_inverse = np.linalg.inv(I - input_output)
-total_output = leontief_inverse @ final_demand
-
-print("投入产出矩阵：")
-print(input_output)
-print("\n列昂惕夫逆矩阵：")
-print(np.round(leontief_inverse, 3))
-print("\n所需总产出（十亿）：")
-print(np.round(total_output, 2))
+:load: code/io_table.py
 ```
+
+带标签的表格按行以 `using_sector` 为索引，按列以 `supplying_sector` 为索引，因此沿着某一列向下读取即可看出一个部门向其他每个部门供应了什么。
 
 ### 经济学应用
 
