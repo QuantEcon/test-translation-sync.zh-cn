@@ -1,5 +1,9 @@
 format: jb-book
 root: index
-chapters:
-  - file: lecture-minimal
-  - file: lecture
+parts:
+  - caption: Foundations
+    chapters:
+      - file: lecture-minimal
+  - caption: Linear Algebra
+    chapters:
+      - file: lecture
