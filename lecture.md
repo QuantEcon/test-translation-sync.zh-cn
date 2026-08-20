@@ -37,6 +37,18 @@ $$
 ```{code-cell} python
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 为本讲义的所有图形使用统一的样式
+sns.set_theme(style='whitegrid')
+
+# set_theme 会重置字体设置，因此中文字体必须在其之后配置
+plt.rcParams['font.family'] = ['Noto Sans CJK SC', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 固定随机种子，使下面的抖动可复现
+np.random.seed(42)
+jitter = np.random.normal(scale=0.05, size=2)
 
 # 创建两个向量
 v1 = np.array([2, 3])
@@ -48,8 +60,8 @@ ax.quiver(0, 0, v1[0], v1[1], angles='xy', scale_units='xy', scale=1, color='blu
 ax.quiver(0, 0, v2[0], v2[1], angles='xy', scale_units='xy', scale=1, color='red', label='v2')
 ax.set_xlim(-1, 5)
 ax.set_ylim(-1, 5)
-ax.set_xlabel('x轴')
-ax.set_ylabel('y轴')
+ax.set_xlabel(r'Î± 分量')
+ax.set_ylabel(r'Î² 分量')
 ax.set_title('二维空间中的向量表示')
 ax.legend()
 ax.grid(True)
