@@ -139,6 +139,8 @@ Av = \lambda v
 
 其中 $\lambda$ 是特征值。这个基本方程贯穿整个经济学，从增长理论到稳定性分析。
 
+希望先了解经济学背景的读者可以参阅 {doc}`入门讲义 <lecture-minimal>`，该讲义在不使用矩阵代数的情况下介绍了供给与需求。方程 {eq}`eigenvalue-equation` 是本节后续全部内容的基础。
+
 对于 $n \times n$ 矩阵 $A$，特征多项式为：
 
 $$
@@ -165,7 +167,7 @@ print(np.round(eigenvalues, 4))
 print("\n特征向量：")
 print(np.round(eigenvectors, 4))
 
-# 对应于特征值1的特征向量给出稳态分布
+# 对应于特征值1的特征向量给出steady态分布
 steady_state_index = np.argmax(eigenvalues)
 steady_state = eigenvectors[:, steady_state_index]
 steady_state = steady_state / steady_state.sum()  # 归一化
