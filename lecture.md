@@ -77,7 +77,7 @@ plt.show()
 
 ## 矩阵运算
 
-矩阵是表示线性变换的数字矩形数组。它们是经济建模和数据分析的基本工具。
+它们是经济建模和数据分析的基本工具。矩阵是表示线性变换的数字矩形数组。
 
 一般的 $m \times n$ 矩阵具有以下形式：
 
@@ -91,6 +91,8 @@ a_{m1} & a_{m2} & \cdots & a_{mn}
 $$
 
 矩阵乘法允许我们组合线性变换。对于矩阵 $A$ 和 $B$，乘积 $AB$ 表示先应用变换 $B$，然后应用变换 $A$。
+
+复合的顺序很重要，因为矩阵乘法不满足交换律：一般而言 $AB \neq BA$。这并非细枝末节。当两项政策被表示为矩阵时，它们是否可交换决定了以相反顺序实施这两项政策是否会得到相同的经济结果。
 
 让我们用一个经济应用来演示矩阵运算：
 
@@ -117,7 +119,18 @@ print("\n列昂惕夫逆矩阵：")
 print(np.round(leontief_inverse, 3))
 print("\n所需总产出（十亿）：")
 print(np.round(total_output, 2))
+
+# 为同一矩阵加上标签，使其坐标轴具有经济含义
+import pandas as pd
+
+sectors = ['Agriculture', 'Manufacturing', 'Services']
+io_table = pd.DataFrame(input_output, index=sectors, columns=sectors)
+io_table.index.name = 'using_sector'
+io_table.columns.name = 'supplying_sector'
+print(io_table)
 ```
+
+带标签的表格按行以 `using_sector` 为索引，按列以 `supplying_sector` 为索引，因此沿着某一列向下读取即可看出一个部门向其他每个部门供应了什么。
 
 ### 经济学应用
 
