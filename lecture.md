@@ -16,6 +16,7 @@ translation:
     Matrix Operations: 矩阵运算
     Matrix Operations::Applications in Economics: 经济学应用
     Eigenvalues and Eigenvectors: 特征值与特征向量
+    Exercises: 练习
 ---
 
 # 线性代数基础
@@ -182,3 +183,36 @@ print(f"失业：{steady_state[1]:.2%}")
 $$
 \lambda_1 = \lim_{k \to \infty} \frac{\|A^k \mathbf{v}_0\|}{\|A^{k-1} \mathbf{v}_0\|}
 $$
+
+## 练习
+
+```{exercise-start}
+:label: la_ex1
+```
+
+编写一个函数 `power_iterate(A, v0, k)`，返回归一化为单位长度的向量 $A^k \mathbf{v}_0$。
+
+```{hint}
+在每次乘法后使用 `np.linalg.norm`，以使各项保持有界。
+```
+
+```{exercise-end}
+```
+
+```{solution-start} la_ex1
+:class: dropdown
+```
+
+以下是一种解法：
+
+```{code-cell} python3
+def power_iterate(A, v0, k):
+    v = np.asarray(v0, dtype=float)
+    for _ in range(k):
+        v = A @ v
+        v = v / np.linalg.norm(v)
+    return v
+```
+
+```{solution-end}
+```
