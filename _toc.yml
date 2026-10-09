@@ -3,3 +3,4 @@ root: index
 chapters:
   - file: lecture-minimal
   - file: lecture
+  - file: game-theory
