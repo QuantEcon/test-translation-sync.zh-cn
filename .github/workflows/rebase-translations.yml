@@ -47,7 +47,7 @@ jobs:
 
     steps:
       - name: Rebase open translation PRs
-        uses: QuantEcon/action-translation@feat/sync-scope-existing
+        uses: QuantEcon/action-translation@v0.30.0
         with:
           mode: rebase
           docs-folder: '.'
