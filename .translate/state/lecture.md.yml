@@ -1,8 +1,9 @@
-source-sha: 70a93c2cdfc1a1ffb1432a21a2750c07d3c4cbcc
+source-sha: 09124ae5a16d0d2192a1567e01f9e7404daf4cf8
 synced-at: "2026-11-26"
 model: claude-sonnet-5
-mode: NEW
-section-count: 3
+mode: UPDATE
+section-count: 4
+tool-version: 0.34.0
 
 # Editor sign-off (harness fixture, #290): every state write must carry this block as written.
 reviewed:
