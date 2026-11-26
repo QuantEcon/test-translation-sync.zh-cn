@@ -1,0 +1,15 @@
+source-sha: 54d250f54763f9f3ed7bb19cb98611963c314495
+synced-at: "2026-11-26"
+model: claude-sonnet-5
+mode: UPDATE
+section-count: 3
+tool-version: 0.34.0
+
+# Editor sign-off (harness fixture, #290): every state write must carry this block as written.
+reviewed:
+  by: mmcky
+  role: editor
+  date: 2026-11-20
+  target-sha: 1234e56
+  source-sha: 0123456
+  via: "sign-off workflow"
